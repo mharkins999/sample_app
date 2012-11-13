@@ -50,7 +50,7 @@ end
     page.should have_selector 'title', text: full_title('Help')
     click_link "Contact"
     page.should have_selector 'title', text: full_title('Contact')   
-    click_link "Sign up now!"
+    click_link "Sign up"
     page.should have_selector 'title', text: full_title('Sign Up')
     click_link "sample app"
     page.should_not have_selector 'title', text: full_title(' | Home ')
