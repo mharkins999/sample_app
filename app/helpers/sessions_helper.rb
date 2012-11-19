@@ -26,12 +26,10 @@ module SessionsHelper
     cookies.delete(:remember_token)
   end
   
-  def
-  private
-  
-    def user_from_remember_token
-      remember_token = cookies[:remember_token]
-      User.find_by_remember_token(remember_token) unless remember_token.nil?
+  def signed_in_user
+    unless signed_in?
+      store_location
+      redirect_to signin_path, notice: "Please sign in."
     end
   end
 end
